@@ -1,0 +1,34 @@
+{
+  "name": "unit-conversion",
+  "description": "Convert pixels, ems, viewport units in the browser",
+  "main": "index.js",
+  "version": "0.0.0",
+  "keywords": [
+    "browser",
+    "unit",
+    "conversion",
+    "viewport",
+    "pixel",
+    "px"
+  ],
+  "browserify": {
+    "transform": []
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify -d example/example.js > example/bundle.js",
+    "watch": "watchify example/example.js -o example/bundle.js -dv",
+    "dev": "parallelshell \"npm run watch\" \"npm run server\"",
+    "demo": "browserify example/example.js > example/bundle.js && html-inline example/index.html | curl -sT- https://htmlb.in"
+  },
+  "author": "Nick Thomas <nichoth@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nichoth/unit-conversion.git"
+  },
+  "license": "ISC",
+  "peerDependencies": {},
+  "devDependencies": {
+    "parallelshell": "^1.2.0"
+  }
+}
